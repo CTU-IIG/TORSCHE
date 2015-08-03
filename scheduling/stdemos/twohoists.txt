@@ -1,0 +1,167 @@
+%Code for twohoists_demo
+
+UserParam.begin
+pause(0.05)
+endparam
+
+%Move material from IN to bath1
+#1
+repeat -20:1:-10
+start = get_schedule(TS);
+treshold = start(1)-mod(dt,period)-10-period*rem(start(1),period);
+if H1trans(1) >= treshold && H1trans(1) > 0
+    H1trans(1) = H1trans(1) - 1;
+end
+in 0
+x(1) = x(1)+1;
+w=vrworld('twohoists.wrl');
+open(w)
+node = vrnode(w,'Counter');
+str{1} = {num2str(max(0,5-x(1)))};
+setfield(node,'string', str{1}) %#ok
+close(w)
+repeat 0:1:4
+T1trans(1) = T1trans(1) + 1;
+repeat 0:1:7
+Arm1_trans(2) = Arm1_trans(2) - 0.5;
+Wrist1_trans(2) = Wrist1_trans(2) - 0.5;
+ArmStick1_trans = ArmStick1_trans + 1;
+repeat 8:1:15
+T1trans(2) = T1trans(2) + 1;
+Arm1_trans(2) = Arm1_trans(2) + 0.5;
+Wrist1_trans(2) = Wrist1_trans(2) + 0.5;
+ArmStick1_trans = ArmStick1_trans - 1;
+repeat 16:1:20
+T1trans(1) = T1trans(1) + 1;
+H1trans(1) = H1trans(1) + 1;
+repeat 21:1:28
+T1trans(2) = T1trans(2) - 1;
+Arm1_trans(2) = Arm1_trans(2) - 0.5;
+Wrist1_trans(2) = Wrist1_trans(2) - 0.5;
+ArmStick1_trans = ArmStick1_trans + 1;
+repeat 29:1:36
+Arm1_trans(2) = Arm1_trans(2) + 0.5;
+Wrist1_trans(2) = Wrist1_trans(2) + 0.5;
+ArmStick1_trans = ArmStick1_trans - 1;
+in 29
+T1trans(1) = -5;
+endparam
+
+%Move material from bath1 to bath2
+#2
+repeat -20:1:-10
+start = get_schedule(TS);
+treshold = start(2)-mod(dt,period)-10-period*rem(start(2),period);
+if abs(H1trans(1)-5) >= treshold
+    if H1trans(1) > 5
+        H1trans(1) = H1trans(1) - 1;
+    end
+    if H1trans(1) < 5
+        H1trans(1) = H1trans(1) + 1;
+    end
+end
+repeat 0:1:7
+Arm1_trans(2) = Arm1_trans(2) - 0.5;
+Wrist1_trans(2) = Wrist1_trans(2) - 0.5;
+ArmStick1_trans = ArmStick1_trans + 1;
+repeat 8:1:15
+T2trans(2) = T2trans(2) + 1;
+Arm1_trans(2) = Arm1_trans(2) + 0.5;
+Wrist1_trans(2) = Wrist1_trans(2) + 0.5;
+ArmStick1_trans = ArmStick1_trans - 1;
+repeat 16:1:20
+T2trans(1) = T2trans(1) + 1;
+H1trans(1) = H1trans(1) + 1;
+repeat 21:1:28
+T2trans(2) = T2trans(2) - 1;
+Arm1_trans(2) = Arm1_trans(2) - 0.5;
+Wrist1_trans(2) = Wrist1_trans(2) - 0.5;
+ArmStick1_trans = ArmStick1_trans + 1;
+repeat 29:1:36
+Arm1_trans(2) = Arm1_trans(2) + 0.5;
+Wrist1_trans(2) = Wrist1_trans(2) + 0.5;
+ArmStick1_trans = ArmStick1_trans - 1;
+in 29
+T2trans(1) = 5;
+endparam
+
+%Move material from bath2 to bath3
+#3
+repeat -20:1:-10
+start = get_schedule(TS);
+treshold = start(3)-mod(dt,period)-10-period*rem(start(3),period);
+if abs(H2trans(1)-10) >= treshold && H2trans(1) > 10
+    H2trans(1) = H2trans(1) - 1;
+end
+repeat 0:1:7
+Arm2_trans(2) = Arm2_trans(2) - 0.5;
+Wrist2_trans(2) = Wrist2_trans(2) - 0.5;
+ArmStick2_trans = ArmStick2_trans + 1;
+repeat 8:1:15
+T3trans(2) = T3trans(2) + 1;
+Arm2_trans(2) = Arm2_trans(2) + 0.5;
+Wrist2_trans(2) = Wrist2_trans(2) + 0.5;
+ArmStick2_trans = ArmStick2_trans - 1;
+repeat 16:1:20
+T3trans(1) = T3trans(1) + 1;
+H2trans(1) = H2trans(1) + 1;
+repeat 21:1:28
+T3trans(2) = T3trans(2) - 1;
+Arm2_trans(2) = Arm2_trans(2) - 0.5;
+Wrist2_trans(2) = Wrist2_trans(2) - 0.5;
+ArmStick2_trans = ArmStick2_trans + 1;
+repeat 29:1:36
+Arm2_trans(2) = Arm2_trans(2) + 0.5;
+Wrist2_trans(2) = Wrist2_trans(2) + 0.5;
+ArmStick2_trans = ArmStick2_trans - 1;
+in 29
+T3trans(1) = 10;
+endparam
+
+%Move material from bath3 to OUT
+#4
+repeat -20:1:-10
+start = get_schedule(TS);
+treshold = start(4)-mod(dt,period)-period*rem(start(4),period)-10;
+if abs(H2trans(1)-15) >= treshold
+    if H2trans(1) > 15
+        H2trans(1) = H2trans(1) - 1;
+    end
+    if H2trans(1) < 15
+        H2trans(1) = H2trans(1) + 1;
+    end
+end
+repeat 0:1:7
+Arm2_trans(2) = Arm2_trans(2) - 0.5;
+Wrist2_trans(2) = Wrist2_trans(2) - 0.5;
+ArmStick2_trans = ArmStick2_trans + 1;
+repeat 8:1:15
+T4trans(2) = T4trans(2) + 1;
+Arm2_trans(2) = Arm2_trans(2) + 0.5;
+Wrist2_trans(2) = Wrist2_trans(2) + 0.5;
+ArmStick2_trans = ArmStick2_trans - 1;
+repeat 16:1:20
+T4trans(1) = T4trans(1) + 1;
+H2trans(1) = H2trans(1) + 1;
+repeat 21:1:28
+T4trans(2) = T4trans(2) - 1;
+Arm2_trans(2) = Arm2_trans(2) - 0.5;
+Wrist2_trans(2) = Wrist2_trans(2) - 0.5;
+ArmStick2_trans = ArmStick2_trans + 1;
+repeat 29:1:36
+Arm2_trans(2) = Arm2_trans(2) + 0.5;
+Wrist2_trans(2) = Wrist2_trans(2) + 0.5;
+ArmStick2_trans = ArmStick2_trans - 1;
+in 35
+T4trans(1) = 15;
+repeat 30:1:34
+T4trans(1) = T4trans(1) + 1;
+in 34
+x(2) = x(2)+1;
+w=vrworld('twohoists.wrl');
+open(w)
+node = vrnode(w,'Counter2');
+str{1} = {num2str(x(2))};
+setfield(node,'string', str{1}) %#ok
+close(w)
+endparam

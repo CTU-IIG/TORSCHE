@@ -1,0 +1,63 @@
+<productinfo
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.mathworks.com/namespace/info/v1/info.xsd">
+<?xml-stylesheet type="text/xsl" href="http://www.mathworks.com/namespace/info/v1/info.xsl"?>
+
+<!-- 
+ Author(s): M. Kutil
+ Copyright (c) 2007 CTU FEE
+ $Revision: 2892 $  $Date: 2009-03-18 10:20:37 +0100 (st, 18 III 2009) $
+ 
+ This file is part of Scheduling Toolbox.
+ 
+ Scheduling Toolbox is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+ 
+ Scheduling Toolbox is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+  
+ You should have received a copy of the GNU General Public License
+ along with Scheduling Toolbox; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
+ USA
+
+-->
+
+<matlabrelease>13</matlabrelease>
+<name>TORSCHE Scheduling Toolbox for Matlab</name>
+<type>toolbox</type>
+<icon>$toolbox/matlab/icons/matlabicon.gif</icon>
+
+<list>
+
+<listitem>
+<label>Graph Edit</label>
+<callback>graphedit</callback>
+<icon>$toolbox/matlab/icons/figureicon.gif</icon>
+</listitem>
+
+<listitem>
+<label>Help</label>
+<callback>doc scheduling</callback>
+<icon>$toolbox/matlab/icons/book_mat.gif</icon>
+</listitem>
+
+<listitem>
+<label>Demos</label>
+<callback>demo toolbox TORSCHE</callback>
+<icon>$toolbox/matlab/icons/demoicon.gif</icon>
+</listitem>
+
+<listitem>
+<label>Product Page (Web)</label>
+<callback>web http://rtime.felk.cvut.cz/scheduling-toolbox/ -browser;</callback>
+<icon>$toolbox/matlab/icons/webicon.gif</icon>
+</listitem>
+
+</list>
+
+</productinfo>

@@ -1,0 +1,132 @@
+TORSCHE Scheduling Toolbox for Matlab
+*************************************
+
+http://rtime.felk.cvut.cz/scheduling-toolbox/
+
+Michal Kutil (kutilm@fel.cvut.cz)
+Premysl Sucha (suchap@fel.cvut.cz)
+Michal Sojka (sojkam1@fel.cvut.cz)
+
+Release 0.4.0 - 12-Oct-2007
+-------------------
+Scheduling Algorithms
+- McNaughtons's algorithm
+- Hu's algorithm
+- New version of algorithm for cyclic scheduling
+- Scheduling algorithm for problem P2|prec,pj=1|Cmax (Coffman's and Graham's Algorithm)
+- Bratley's algorithm for 1|rj,~dj|Cmax
+- Scheduling algorithm for problem P|rj,prec,~dj|Cmax
+- Scheduling algorithm for problem P||Cmax
+- Scheduling algorithm for problem 1||sumUj
+- Scheduling algorithm for problem 1|rj|Cmax
+
+Graph
+- New version of Graphedit
+- Revised structure of object graph
+- Dijkstra's algorithm
+- Algorithm for spaning tree problem
+- Tarjan's algorithm
+- Graph coloring
+
+Classification in Scheduling
+- Revision of function IS
+
+Other
+- Cyclic Scheduling Simulator
+- New demos
+- Reference Guide
+- Screen casts present new features available at http://rtime.felk.cvut.cz/scheduling-toolbox/screencasts.php
+- Bezier function
+
+Release 0.3.5 - 02-Feb-2007
+-------------------
+Added Real-Time scheduling support
+- fixed priority scheduler
+- Response time analysis
+
+Scheduling Algorithms
+- SAT base algorithm
+
+Other
+- Utility "sch_compare" for taskset comparing
+- "xmlsave" for scheduling objects export as xml file
+
+Release 0.2.0 - 31-Mar-2006
+-------------------
+Scheduling Algorithms
+- Horn algorithm (Horn'74)
+- List Scheduling rebuild 
+ - Verbose mode
+ - User defined heuristics for list sorting – SPT, LPT,...
+ - Experimental algorithm for Q, R processors support
+- EDF remove (use List Scheduling with EDF sorting)
+- ALAP, ASAP (as late/soon as possible)
+- Scheduling with start time related deadlines (spntl).
+- Cyclic scheduling on set of dedicated processors (mdcycsch) with DSP benchmark  algorithms added (wdf,diffeq, vanDogen, rls, elliptic, dct, iir, jaumann)
+
+
+Task / Taskset 
+- Random task and taskset (randtask, randtaskset)
+- Task in taskset sorting (sort)
+- Taskset indexing (example: T(1:3))
+
+Graph
+- New objects for graph algorithms support
+- Random Data Flow Graph (DFG) generator (randdfg)
+- CDFG to LH graph conversion (cdfg2LHgraph)
+- Graphedit
+
+Graph Algorithms
+- Floyd
+- Predecessors and successors
+- Quadratic Assignment Problem (qap) with several standard benchmakrs (Chr12a, Nug6, Nug8, Tai6a, Tai8a)
+- Minimal circuit ratio algorithm (criticalcircuitratio)
+- Algorithm for Hamilton circuit (hamiltoncircuit) with 'Czech republic' example
+
+Supplementary Algorithms
+- MIQP solvers interface for MIQP and CPLEX (iquadprog) 
+- ILP solvers interface for GLPK, LP_SOLVE and CPLEX (ilinprog)
+
+Other
+- Object problem extended to m-DEDICATED, SPNTL, xCmax
+- Plot
+ - Tasks are draw from top to bottom
+ - Task color taken from matlab colormap
+ - Periodic task plotting support
+ - Optional precedence constrain draw
+ - User defined axis
+ - ASAP/ALAP
+- Function for schedule analysis (schparam)
+- Make.m for mex-file compilation
+- The . (dot) operator support
+- Color name to the RGB equivalent conversion (color2rgb)
+- Fixed many small bugs
+- Demos
+ - cyclic_scheduling_demo
+ - cyc_sche_methods_demo
+ - spntl_demo
+ - ilinprog_demo
+ - iquadprog_demo 
+ - listsch_demo
+ - horn_demo
+
+Release 0.1.2 - 03-Jun-2005
+-------------------
+- New schedule algorithm "brucker76"
+- Object Problem extended for in-tree, pj=X
+- Task and taskSet include user parameters
+- Fixed problem with using subplot
+- Algorithm "listsch" accept paramether processing time
+- "horzcat" for tasksets: T=[T1 T2] 
+- Get and set output well-arranged
+- Fixed many small bugs
+
+Release 0.1.1 - 06-Dec-2004
+-------------------
+- Corect problems for matlab R12:
+ - With missing function 'ismethod'
+ - With missing boolean variable 'true', 'false'
+
+Release 0.1.0 - 24-Nov-2004 
+-------------------
+- First release for matlab R13

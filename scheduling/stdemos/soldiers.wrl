@@ -1,0 +1,231 @@
+#VRML V2.0 utf8
+
+#Created with V-Realm Builder v2.0
+#Integrated Data Systems Inc.
+#www.ids-net.com
+
+
+Background {
+	groundAngle	[ 0.9, 1.5, 1.57 ]
+	groundColor	[ 0 0.5 0,
+			  0 0.5 0,
+			  0 0.5 0,
+			  0 0.5 0 ]
+	skyAngle	[ 0.1, 1.2, 1.57 ]
+	skyColor	[ 0 0.5 0,
+			  0 0.5 0,
+			  0 0.5 0,
+			  0 0.5 0 ]
+}
+WorldInfo {
+	info	"$Date: 2009-03-18 10:20:37 +0100 (st, 18 III 2009) $"
+	title	"Soldiers"
+}
+Viewpoint {
+	position	-2.5 2 13
+}
+DEF River Transform {
+	translation	-0.5 2 0
+	children Shape {
+		appearance	Appearance {
+			material	NULL
+			texture	DEF Water_Wavy ImageTexture {
+				url	"texture/river.jpg"
+			}
+
+		}
+
+		geometry	Box {
+			size	8 15 0.1
+		}
+
+	}
+}
+DEF Soldier1 Transform {
+	translation	-5 0 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+			texture	ImageTexture {
+				url	"texture/s1.jpg"
+			}
+
+		}
+
+		geometry	Box {
+			size	1 1 0.1
+		}
+
+	}
+}
+DEF Soldier2 Transform {
+	translation	-5 1.1 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+			texture	ImageTexture {
+				url	"texture/s2.jpg"
+			}
+
+		}
+
+		geometry	Box {
+			size	1 1 0.1
+		}
+
+	}
+}
+DEF Soldier3 Transform {
+	translation	-5 2.2 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+			texture	ImageTexture {
+				url	"texture/s3.jpg"
+			}
+
+		}
+
+		geometry	Box {
+			size	1 1 0.1
+		}
+
+	}
+}
+DEF Soldier4 Transform {
+	translation	-5 3.3 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+			texture	ImageTexture {
+				url	"texture/s4.jpg"
+			}
+
+		}
+
+		geometry	Box {
+			size	1 1 0.1
+		}
+
+	}
+}
+DEF T9s Transform {
+	translation	-9 3 -2.3772e-007
+	scale	1 1 0.1
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+		}
+
+		geometry	DEF Text1 Text {
+			string	"T = 9s"
+			fontStyle	FontStyle {
+			}
+
+		}
+
+	}
+}
+DEF T5s Transform {
+	translation	-9 1.9 0
+	scale	1 1 0.1
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+		}
+
+		geometry	DEF Text2 Text {
+			string	"T = 5s"
+			fontStyle	FontStyle {
+			}
+
+		}
+
+	}
+}
+DEF T2s Transform {
+	translation	-9 0.8 0
+	scale	1 1 0.1
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+		}
+
+		geometry	DEF Text3 Text {
+			string	"T = 2s"
+			fontStyle	FontStyle {
+			}
+
+		}
+
+	}
+}
+DEF T1s Transform {
+	translation	-9 -0.3 0
+	scale	1 1 0.1
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+		}
+
+		geometry	DEF Text4 Text {
+			string	"T = 1s"
+			fontStyle	FontStyle {
+			}
+
+		}
+
+	}
+}
+DEF Time_number Transform {
+	translation	-7.2 6.47 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+		}
+
+		geometry	DEF Counter Text {
+			string	"0"
+			fontStyle	FontStyle {
+			}
+
+		}
+
+	}
+}
+DEF Time_text Transform {
+	translation	-12 6.5 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+		}
+
+		geometry	Text {
+			string	"Actual time"
+			fontStyle	FontStyle {
+			}
+
+		}
+
+	}
+}

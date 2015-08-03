@@ -1,0 +1,727 @@
+#VRML V2.0 utf8
+
+#Created with V-Realm Builder v2.0
+#Integrated Data Systems Inc.
+#www.ids-net.com
+
+
+Viewpoint {
+	fieldOfView	1
+	jump	TRUE
+	position	15 8 20
+	description	"View 1"
+}
+Background {
+	groundAngle	[ 0.9, 1.5, 1.57 ]
+	groundColor	[ 0 0.8 0,
+			  0 0 0,
+			  0.467223 0.82 0.445801,
+			  0.6 0.6 0.600279 ]
+	skyAngle	[ 0.1, 1.2, 1.57 ]
+	skyColor	[ 0.76238 0.8 0.1427,
+			  0.277798 0.219779 0.7,
+			  0.222549 0.6 0.7,
+			  0.60094 0.6 0.6 ]
+}
+DEF Machine1 Transform {
+	translation	8.5 4 -0.01
+	children [ 
+	    Shape {
+		    appearance	Appearance {
+			    material	Material {
+				    diffuseColor	0.23 0.23 0.23
+			    }
+
+		    }
+
+		    geometry	Box {
+			    size	5 4 0.1
+		    }
+
+	    }
+
+	    Transform {
+		    translation	1.5 0 0.3
+		    scale	0.648193 0.648193 0.648193
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    diffuseColor	0 0.2 0
+				    }
+
+			    }
+
+			    geometry	Box {
+				    size	3.2 6 0.1
+			    }
+
+		    }
+	    }
+
+	    Transform {
+		    translation	0.5999 1.38 0.3
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    diffuseColor	0 0.2 0
+				    }
+
+			    }
+
+			    geometry	Box {
+				    size	2.5 1.1 0.1
+			    }
+
+		    }
+	    }
+
+	    DEF Drill1 Transform {
+		    translation	-0.4 0.8 0
+		    children [ 
+			Shape {
+				appearance	Appearance {
+					material	Material {
+						diffuseColor	0.0666666 0.0666666 0.1
+					}
+
+				}
+
+				geometry	Cylinder {
+					height	2
+					radius	0.07
+					side	TRUE
+					bottom	TRUE
+				}
+
+			}
+
+			Transform {
+				translation	0 -1.1 0.03
+				rotation	1 0 0  3.14159
+				children Shape {
+					appearance	Appearance {
+						material	Material {
+							diffuseColor	0 0 0
+						}
+
+					}
+
+					geometry	Cone {
+						bottomRadius	0.04
+						height	0.2
+					}
+
+				}
+			}
+
+			Transform {
+				translation	0 0.1 0
+				children Shape {
+					appearance	Appearance {
+						material	Material {
+						}
+
+					}
+
+					geometry	Cylinder {
+						height	1.5
+						radius	0.17
+					}
+
+				}
+			}
+
+			Transform {
+				translation	0 -0.7 0
+				rotation	1 0 0  3.14159
+				children Shape {
+					appearance	Appearance {
+						material	Material {
+						}
+
+					}
+
+					geometry	Cone {
+						bottomRadius	0.17
+						height	0.1
+					}
+
+				}
+			}
+		    ]
+	    }
+	]
+}
+DEF Status1 Transform {
+	translation	8.5 1.75 0.1
+	children Shape {
+		appearance	Appearance {
+			material	DEF ColorMachine1 Material {
+				diffuseColor	0 1 0
+			}
+
+			texture	NULL
+		}
+
+		geometry	Box {
+			size	3 0.5 0.1
+		}
+
+	}
+}
+DEF Machine1_text Transform {
+	translation	7.5 0.2 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 0 0
+			}
+
+		}
+
+		geometry	Text {
+			string	"Drill"
+			fontStyle	FontStyle {
+				size	1.5
+			}
+
+		}
+
+	}
+}
+DEF Machine2 Transform {
+	translation	22 4 0
+	children [ 
+	    Shape {
+		    appearance	Appearance {
+			    material	DEF ColorKiln Material {
+				    diffuseColor	0.24 0.24 0.24
+			    }
+
+		    }
+
+		    geometry	Box {
+			    size	6 4 0.1
+		    }
+
+	    }
+
+	    DEF Heating Transform {
+		    translation	0 1.8 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	DEF ColorHeat Material {
+					    ambientIntensity	0.2
+					    diffuseColor	0.1 0.25 0.3
+				    }
+
+			    }
+
+			    geometry	Box {
+				    size	5 0.3 0.1
+			    }
+
+		    }
+	    }
+	]
+}
+DEF Status2 Transform {
+	translation	22 1.75 0.1
+	children Shape {
+		appearance	Appearance {
+			material	DEF ColorMachine2 Material {
+				diffuseColor	0 1 0
+			}
+
+		}
+
+		geometry	Box {
+			size	3 0.5 0.1
+		}
+
+	}
+}
+DEF Machine2_text Transform {
+	translation	21.1 0.2 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 0 0
+			}
+
+		}
+
+		geometry	Text {
+			string	"Kiln"
+			fontStyle	FontStyle {
+				size	1.5
+			}
+
+		}
+
+	}
+}
+DEF Machine3 Transform {
+	translation	9 11.25 0
+	children [ 
+	    Shape {
+		    appearance	Appearance {
+			    material	Material {
+				    diffuseColor	0.23 0.23 0.23
+			    }
+
+		    }
+
+		    geometry	Box {
+			    size	5 4 0.1
+		    }
+
+	    }
+
+	    DEF Press_up Transform {
+		    translation	0 -1.5 0.01
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    diffuseColor	0.7 0 0
+				    }
+
+			    }
+
+			    geometry	Box {
+				    size	4 0.5 0.1
+			    }
+
+		    }
+	    }
+
+	    DEF Press_down Transform {
+		    translation	0 1.5 0.01
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    diffuseColor	0.7 0 0
+				    }
+
+			    }
+
+			    geometry	Box {
+				    size	4 0.5 0.1
+			    }
+
+		    }
+	    }
+
+	    DEF Lift_down Transform {
+		    translation	0 -1.85 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+				    }
+
+			    }
+
+			    geometry	DEF Lift_down_size Cylinder {
+				    height	0.2
+				    radius	0.2
+				    bottom	TRUE
+			    }
+
+		    }
+	    }
+
+	    DEF Lift_up Transform {
+		    translation	0 1.85 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+				    }
+
+			    }
+
+			    geometry	DEF Lift_up_size Cylinder {
+				    height	0.2
+				    radius	0.2
+				    bottom	TRUE
+			    }
+
+		    }
+	    }
+	]
+}
+DEF Status3 Transform {
+	translation	9 9 0.1
+	children Shape {
+		appearance	Appearance {
+			material	DEF ColorMachine3 Material {
+				diffuseColor	0 1 0
+			}
+
+		}
+
+		geometry	Box {
+			size	3 0.5 0.1
+		}
+
+	}
+}
+DEF Machine3_text Transform {
+	translation	7.6 7.6 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 0 0
+			}
+
+		}
+
+		geometry	Text {
+			string	"Press"
+			fontStyle	FontStyle {
+				size	1.5
+			}
+
+		}
+
+	}
+}
+DEF Central_line Transform {
+	translation	15 2 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+		}
+
+		geometry	Box {
+			size	8 0.1 0.1
+		}
+
+	}
+}
+DEF Central_buffer Transform {
+	translation	15 3.3 0.1
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0.1 0.1 0.1
+			}
+
+		}
+
+		geometry	Box {
+			size	2.5 2.5 0.1
+		}
+
+	}
+}
+DEF Central_text Transform {
+	translation	11.9 0.7 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 0 0
+			}
+
+		}
+
+		geometry	Text {
+			string	"Central buffer"
+			fontStyle	FontStyle {
+				size	1.5
+			}
+
+		}
+
+	}
+}
+DEF Input_line Transform {
+	translation	2 2 -0.0329
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+		}
+
+		geometry	Box {
+			size	8 0.1 0.1
+		}
+
+	}
+}
+DEF Input_buffer Transform {
+	translation	0 3.3 0.1
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0.1 0.1 0.1
+			}
+
+		}
+
+		geometry	Box {
+			size	2.5 2.5 0.1
+		}
+
+	}
+}
+DEF Input_text Transform {
+	translation	-2.7 0.7 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 0 0
+			}
+
+		}
+
+		geometry	Text {
+			string	"Input buffer"
+			fontStyle	FontStyle {
+				size	1.5
+			}
+
+		}
+
+	}
+}
+DEF Output_line Transform {
+	translation	28.9 2 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+		}
+
+		geometry	Box {
+			size	7.8 0.1 0.1
+		}
+
+	}
+}
+DEF Output_buffer Transform {
+	translation	30 3.30002 0.0999989
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0.1 0.1 0.1
+			}
+
+		}
+
+		geometry	Box {
+			size	5 2.5 0.1
+		}
+
+	}
+}
+DEF Output_text Transform {
+	translation	26.9 0.7 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 0 0
+			}
+
+		}
+
+		geometry	Text {
+			string	"Output buffer"
+			fontStyle	FontStyle {
+				size	1.5
+			}
+
+		}
+
+	}
+}
+DEF Upper_line1 Transform {
+	translation	3.7 10.5 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+		}
+
+		geometry	Box {
+			size	5.6 0.1 0.1
+		}
+
+	}
+}
+DEF Upper_line2 Transform {
+	translation	16 10.9 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+		}
+
+		geometry	Box {
+			size	9 0.1 0.1
+		}
+
+	}
+}
+DEF Upper_buffer Transform {
+	translation	15 12.2 0.1
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0.1 0.1 0.1
+			}
+
+		}
+
+		geometry	Box {
+			size	2.5 2.5 0.1
+		}
+
+	}
+}
+DEF Upper_text Transform {
+	translation	12.2 9.7 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 0 0
+			}
+
+		}
+
+		geometry	Text {
+			string	"Upper buffer"
+			fontStyle	FontStyle {
+				size	1.5
+			}
+
+		}
+
+	}
+}
+DEF Task1 Transform {
+	translation	0 2.8 0.01
+	children Shape {
+		appearance	Appearance {
+			material	DEF ColorTask1 Material {
+				diffuseColor	0.3 0.3 0.8
+			}
+
+			texture	ImageTexture {
+				url	"texture/cover.jpg"
+			}
+
+		}
+
+		geometry	Box {
+			size	1.5 1.5 0.1
+		}
+
+	}
+}
+DEF Task2 Transform {
+	translation	0 2.8 0.01
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0.3 0.3 0.8
+			}
+
+			texture	ImageTexture {
+				url	"texture/pedestal.jpg"
+			}
+
+		}
+
+		geometry	Box {
+			size	1.5 1.5 0.1
+		}
+
+	}
+}
+DEF Task3 Transform {
+	translation	0 2.8 0.05
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				ambientIntensity	0.2
+				diffuseColor	0.642581 0.265197 0.8
+			}
+
+			texture	ImageTexture {
+				url	"texture/wand.jpg"
+			}
+
+		}
+
+		geometry	DEF T3size Box {
+			size	1.5 1.5 0.1
+		}
+
+	}
+}
+DEF Task4 Transform {
+	translation	0 2.8 0.01
+	children Shape {
+		appearance	Appearance {
+			material	DEF ColorTask1 Material {
+				diffuseColor	0.3 0.3 0.8
+			}
+
+			texture	ImageTexture {
+				url	"texture/cover.jpg"
+			}
+
+		}
+
+		geometry	Box {
+			size	1.5 1.5 0.1
+		}
+
+	}
+}
+DEF Task5 Transform {
+	translation	0 2.8 0.01
+	children Shape {
+		appearance	Appearance {
+			material	DEF ColorTask1 Material {
+				diffuseColor	0.3 0.3 0.8
+			}
+
+			texture	ImageTexture {
+				url	"texture/pedestal.jpg"
+			}
+
+		}
+
+		geometry	Box {
+			size	1.5 1.5 0.1
+		}
+
+	}
+}
+DEF Task6 Transform {
+	translation	0 2.8 0.01
+	children Shape {
+		appearance	Appearance {
+			material	DEF ColorTask1 Material {
+				diffuseColor	0.3 0.3 0.8
+			}
+
+			texture	ImageTexture {
+				url	"texture/wand.jpg"
+			}
+
+		}
+
+		geometry	DEF T6size Box {
+			size	1.5 1.5 0.1
+		}
+
+	}
+}

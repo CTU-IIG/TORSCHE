@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+     Author(s): M. Kutil, P.Sucha
+     Copyright (c) 2005 CTU FEE
+     $Revision: 2892 $  $Date: 2009-03-18 10:20:37 +0100 (st, 18 III 2009) $
+     
+	 This file is part of TORSCHE Scheduling Toolbox for Matlab.
+	 TORSCHE Scheduling Toolbox for Matlab can be used, copied 
+	 and modified under the next licenses
+	
+	 - GPL - GNU General Public License
+	
+	 - and other licenses added by project originators or responsible
+	
+	 Code can be modified and re-distributed under any combination
+	 of the above listed licenses. If a contributor does not agree
+	 with some of the licenses, he/she can delete appropriate line.
+	 If you delete all lines, you are not allowed to distribute 
+	 source code and/or binaries utilizing code.
+	
+	 --------------------------------------------------------------
+	                  GNU General Public License  
+	
+	 TORSCHE Scheduling Toolbox for Matlab is free software;
+	 you can redistribute it and/or modify it under the terms of the
+	 GNU General Public License as published by the Free Software
+	 Foundation; either version 2 of the License, or (at your option)
+	 any later version.
+	 
+	 TORSCHE Scheduling Toolbox for Matlab is distributed in the hope
+	 that it will be useful, but WITHOUT ANY WARRANTY;
+	 without even the implied warranty of MERCHANTABILITY or 
+	 FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+	 General Public License for more details.
+	 
+	 You should have received a copy of the GNU General Public License
+	 along with TORSCHE Scheduling Toolbox for Matlab; if not, write
+	 to the Free Software Foundation, Inc., 59 Temple Place,
+	 Suite 330, Boston, MA 02111-1307 USA
+     -->
+<demos>
+	<name>TORSCHE Scheduling Toolbox for Matlab</name>
+	<type>toolbox</type>
+	<icon>$toolbox/matlab/icons/matlabicon.gif</icon>
+	<description isCdata="no">
+		<p>TORSCHE Scheduling Toolbox for Matlab demos.</p>
+	</description>
+	
+	<demosection>
+		<label>Scheduling Algorithms</label>
+		<demoitem>
+			<label>Horn algorithm</label>
+			<callback>horn_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Scheduling problem '1|rj|Cmax'</label>
+			<callback>alg1rjcmax_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Scheduling problem '1|rj,~dj|Cmax'</label>
+			<callback>bratley_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Scheduling problem '1||sumUj'</label>
+			<callback>alg1sumuj_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Scheduling problem 'P||Cmax'</label>
+			<callback>algpcmax_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Scheduling problem 'P|pmtn|Cmax'</label>
+			<callback>mcnaughtonrule_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Scheduling problem 'P2|prec,pj=1|Cmax'</label>
+			<callback>coffmangraham_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Scheduling problem 'P|in-tree,pj=1|Cmax'</label>
+			<callback>hu_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Scheduling problem 'P|rj,~dj,prec|Cmax'</label>
+			<callback>algprjdeadlinepreccmax_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>List Scheduling and Strategy</label>
+			<callback>listsch_demo</callback>
+		</demoitem>
+	</demosection>
+	
+	<demosection>
+		<label>Cyclic Scheduling</label>
+		<demoitem>
+			<label>Cyclic Scheduling</label>
+			<callback>cycsch_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Cyclic Scheduling (CSSIM)</label>
+			<callback>cssim_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Cyclic Scheduling - integer/binary method</label>
+			<callback>cycsch_methods_demo</callback>
+		</demoitem>
+	</demosection>
+	
+	<demosection>
+		<label>Scheduling with Positive and Negative Time-Lags</label>
+		<demoitem>
+			<label>Scheduling with Positive and Negative Time-Lags algorithm</label>
+			<callback>spntl_demo</callback>
+		</demoitem>
+	</demosection>
+	
+	<demosection>
+		<label>SAT-based Scheduling</label>
+		<demoitem>
+			<label>Scheduling problem 'P|prec|Cmax'</label>
+			<callback>sat_demo</callback>
+		</demoitem>
+	</demosection>
+	
+	<demosection>
+		<label>Graph Algorithms</label>
+		<demoitem>
+			<label>Spaning tree</label>
+			<callback>spanningtree_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Longest paths (Dijkstra's algorithm)</label>
+			<callback>dijkstra_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Graph coloring 1</label>
+			<callback>graphcoloring_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Graph coloring 2</label>
+			<callback>graphcoloring_demo2</callback>
+		</demoitem>
+	</demosection>
+	
+	<demosection>
+		<label>Integer Programming</label>
+		<demoitem>
+			<label>Integer Linear Programming</label>
+			<callback>ilinprog_demo</callback>
+		</demoitem>
+		<demoitem>
+			<label>Integer Quadratic Programming</label>
+			<callback>iquadprog_demo</callback>
+		</demoitem>
+	</demosection>
+	
+</demos>

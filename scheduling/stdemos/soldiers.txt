@@ -1,0 +1,42 @@
+%Code for soldiers_demo
+
+UserParam.begin
+pause(0.1)
+cnt = floor(t+sampleTime);
+if cnt == t
+    w=vrworld('soldiers.wrl');
+    open(w)
+    node = vrnode(w,'Counter');
+    str{1} = {num2str(cnt)};
+    setfield(node,'string', str{1}) %#ok
+    close(w)
+end
+endparam
+
+#1
+repeat 0:1:19
+Soldier1(1) = Soldier1(1) + 9/20;
+Soldier2(1) = Soldier2(1) + 9/20;
+endparam
+
+#2
+repeat 0:1:19
+Soldier2(1) = Soldier2(1) - 9/20;
+endparam
+
+#3
+repeat 0:1:89
+Soldier3(1) = Soldier3(1) + 9/90;
+Soldier4(1) = Soldier4(1) + 9/90;
+endparam
+
+#4
+repeat 0:1:9
+Soldier1(1) = Soldier1(1) - 9/10;
+endparam
+
+#5
+repeat 0:1:19
+Soldier1(1) = Soldier1(1) + 9/20;
+Soldier2(1) = Soldier2(1) + 9/20;
+endparam

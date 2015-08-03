@@ -1,0 +1,253 @@
+%Code for lamps_demo
+
+UserParam.begin
+pause(0.05)
+endparam
+
+%move material 1 to drill and then to center buffer
+task1
+repeat 0:1:7
+T1trans(1) = T1trans(1)+1;
+in 7
+ColM1 = [1 0 0];
+repeat 8:1:18
+Drill1(2) = Drill1(2)-0.04;
+repeat 19:1:29
+Drill1(2) = Drill1(2)+0.04;
+in 29
+ColM1 = [0 1 0];
+repeat 29:1:35
+T1trans(1) = T1trans(1)+1;
+endparam
+
+%move material 1 to machine2
+task2
+repeat 0:1:8
+T1trans(1) = T1trans(1)+1;
+in 8
+ColM2 = [1 0 0];
+endparam
+
+%move material 2 to drill and then to center buffer
+task3
+repeat 0:1:7
+T2trans(1) = T2trans(1)+1;
+in 7
+ColM1 = [1 0 0];
+repeat 8:1:18
+Drill1(2) = Drill1(2)-0.04;
+repeat 19:1:29
+Drill1(2) = Drill1(2)+0.04;
+in 29
+ColM1 = [0 1 0];
+repeat 29:1:35
+T2trans(1) = T2trans(1)+1;
+endparam
+
+%move material 2 to machine2
+task4
+repeat 0:1:4
+T2trans(1) = T2trans(1)+1;
+in 4
+ColM2 = [1 0 0];
+endparam
+
+%move material 3 to machine3 and then to upper buffer
+task5
+repeat 0:1:16
+T3trans(2) = T3trans(2)+0.5;
+repeat 17:1:25
+T3trans(1) = T3trans(1)+1;
+in 25
+ColM3 = [1 0 0];
+repeat 26:1:30
+Press1(2) = Press1(2)+0.2;
+Press2(2) = Press2(2)-0.2;
+Lift1(2) = Lift1(2)-0.1;
+Lift2(2) = Lift2(2)+0.1;
+Lift1size = Lift1size+0.2;
+Lift2size = Lift2size+0.2;
+repeat 28:1:30
+T3size(2) = T3size(2)-0.3;
+repeat 31:1:35
+Press1(2) = Press1(2)-0.2;
+Press2(2) = Press2(2)+0.2;
+Lift1(2) = Lift1(2)+0.1;
+Lift2(2) = Lift2(2)-0.1;
+Lift1size = Lift1size-0.2;
+Lift2size = Lift2size-0.2;
+in 40
+ColM3 = [0 1 0];
+repeat 38:1:43
+T3trans(1) = T3trans(1)+1;
+endparam
+
+%move material 3 to machine2
+task6
+repeat 0:1:6
+T3trans(1) = T3trans(1)+1;
+repeat 7:1:14
+T3trans(2) = T3trans(2)-1;
+in 15
+T3trans(2) = T3trans(2)-0.5;
+in 10
+ColM2 = [1 0 0];
+endparam
+
+%connect material together and move to output buffer
+task7
+in 0
+ColM2 = [1 0 0];
+repeat 0:1:2
+T1rot(4) = T1rot(4)+0.4;
+T2rot(4) = T2rot(4)-0.4;
+in 3
+T1rot(4) = T1rot(4)+0.375;
+T2rot(4) = T2rot(4)-0.375;
+repeat 6:1:10
+T1trans(1) = T1trans(1)-0.1;
+T2trans(1) = T2trans(1)+0.1;
+in 10
+ColKiln = [0.7 0.2 0.1];
+ColHeat = [1 0 0];
+in 15
+ColKiln = [0.23 0.23 0.23];
+ColHeat = [0.1 0.25 0.3];
+repeat 16:1:23
+T1trans(1) = T1trans(1)+1;
+T2trans(1) = T2trans(1)+1;
+T3trans(1) = T3trans(1)+1;
+in 23
+ColM2 = [0 1 0];
+in 30
+T1trans(1) = 0;
+T2trans(1) = 0;
+T3trans(1) = 0;
+T3size(2) = 1.5;
+T1rot(4) = 0;
+T2rot(4) = 0;
+endparam
+
+%move material 1 to drill and then to center buffer
+task8
+repeat 0:1:7
+T4trans(1) = T4trans(1)+1;
+in 7
+ColM1 = [1 0 0];
+repeat 8:1:18
+Drill1(2) = Drill1(2)-0.04;
+repeat 19:1:29
+Drill1(2) = Drill1(2)+0.04;
+in 29
+ColM1 = [0 1 0];
+repeat 29:1:35
+T4trans(1) = T4trans(1)+1;
+endparam
+
+%move material 1 to machine2
+task9
+repeat 0:1:8
+T4trans(1) = T4trans(1)+1;
+in 8
+ColM2 = [1 0 0];
+endparam
+
+%move material 2 to drill and then to center buffer
+task10
+repeat 0:1:7
+T5trans(1) = T5trans(1)+1;
+in 7
+ColM1 = [1 0 0];
+repeat 8:1:18
+Drill1(2) = Drill1(2)-0.04;
+repeat 19:1:29
+Drill1(2) = Drill1(2)+0.04;
+in 29
+ColM1 = [0 1 0];
+repeat 29:1:35
+T5trans(1) = T5trans(1)+1;
+endparam
+
+%move material 2 to machine2
+task11
+repeat 0:1:4
+T5trans(1) = T5trans(1)+1;
+in 4
+ColM2 = [1 0 0];
+endparam
+
+%move material 3 to machine3 and then to upper buffer
+task12
+repeat 0:1:16
+T6trans(2) = T6trans(2)+0.5;
+repeat 17:1:25
+T6trans(1) = T6trans(1)+1;
+in 25
+ColM3 = [1 0 0];
+repeat 26:1:30
+Press1(2) = Press1(2)+0.2;
+Press2(2) = Press2(2)-0.2;
+Lift1(2) = Lift1(2)-0.1;
+Lift2(2) = Lift2(2)+0.1;
+Lift1size = Lift1size+0.2;
+Lift2size = Lift2size+0.2;
+repeat 28:1:30
+T6size(2) = T6size(2)-0.3;
+repeat 31:1:35
+Press1(2) = Press1(2)-0.2;
+Press2(2) = Press2(2)+0.2;
+Lift1(2) = Lift1(2)+0.1;
+Lift2(2) = Lift2(2)-0.1;
+Lift1size = Lift1size-0.2;
+Lift2size = Lift2size-0.2;
+in 40
+ColM3 = [0 1 0];
+repeat 38:1:43
+T6trans(1) = T6trans(1)+1;
+endparam
+
+%move material 3 to machine2
+task13
+repeat 0:1:6
+T6trans(1) = T6trans(1)+1;
+repeat 7:1:14
+T6trans(2) = T6trans(2)-1;
+in 15
+T6trans(2) = T6trans(2)-0.5;
+in 10
+ColM2 = [1 0 0];
+endparam
+
+%connect material together and move to output buffer
+task14
+in 0
+ColM2 = [1 0 0];
+repeat 0:1:2
+T4rot(4) = T4rot(4)+0.4;
+T5rot(4) = T5rot(4)-0.4;
+in 3
+T4rot(4) = T4rot(4)+0.375;
+T5rot(4) = T5rot(4)-0.375;
+repeat 6:1:10
+T4trans(1) = T4trans(1)-0.1;
+T5trans(1) = T5trans(1)+0.1;
+in 10
+ColKiln = [0.7 0.2 0.1];
+ColHeat = [1 0 0];
+in 15
+ColKiln = [0.23 0.23 0.23];
+ColHeat = [0.1 0.25 0.3];
+repeat 16:1:23
+T4trans(1) = T4trans(1)+1;
+T5trans(1) = T5trans(1)+1;
+T6trans(1) = T6trans(1)+1;
+in 23
+ColM2 = [0 1 0];
+in 30
+T4trans(1) = 0;
+T5trans(1) = 0;
+T6trans(1) = 0;
+T6size(2) = 1.5;
+T4rot(4) = 0;
+T5rot(4) = 0;
+endparam

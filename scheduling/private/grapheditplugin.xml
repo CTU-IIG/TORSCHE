@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pluginlist application="Graphedit" ver="1.0">
+  <group name="Graph">
+    <description />
+
+    <plugin gui="1" name="Hamilton">
+      <description>Finds Hamilton circuit in a graph </description>
+
+      <command>graph\hamiltoncircuit.m</command>
+    </plugin>
+
+    <plugin gui="0" name="To Workspace">
+      <description>Pohodi graph do workspace matlabu </description>
+
+      <command>graphtoworkspace</command>
+    </plugin>
+  </group>
+
+  <group name="Graphics">
+    <description>Graphics plugins</description>
+
+    <plugin gui="0" name="Nodes to color">
+      <command>nodestocolor.m</command>
+    </plugin>
+  </group>
+
+  <group name="Creating">
+    <description />
+
+    <plugin gui="1" name="Create Nodes">
+      <description>Creates graph with ordered number of nodes </description>
+
+      <command>createnodes</command>
+    </plugin>
+  </group>
+
+  <group name="Testing">
+    <description />
+
+    <plugin gui="0" name="is loop">
+      <command>plugin\pluginisselfloop</command>
+    </plugin>
+
+    <plugin gui="0" name="is cyclic">
+      <command>pluginiscyclic</command>
+    </plugin>
+
+    <plugin gui="0" name="is simple">
+      <command>pluginissimple</command>
+    </plugin>
+  </group>
+</pluginlist>

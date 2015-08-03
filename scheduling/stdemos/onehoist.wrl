@@ -1,0 +1,637 @@
+#VRML V2.0 utf8
+
+#Created with V-Realm Builder v2.0
+#Integrated Data Systems Inc.
+#www.ids-net.com
+
+
+WorldInfo {
+	info	[ "$Date: 2009-07-15 11:03:10 +0200 (st, 15 VII 2009) $",
+			  "$Author: capekr1 $" ]
+	title	"Hoist"
+}
+DEF View2 Viewpoint {
+	fieldOfView	0.9
+	position	14 4.6 25
+	description	"View2"
+}
+DEF View1 Viewpoint {
+	fieldOfView	0.85
+	position	7.8 4 25
+	description	"View1"
+}
+Background {
+	groundAngle	[ 0.9, 1.5, 1.57 ]
+	groundColor	0.8 0.8 0.8
+	skyAngle	[ 0.1, 1.2, 1.57 ]
+	skyColor	0.8 0.8 0.8
+}
+DEF Ground Transform {
+	translation	5 -3.05 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 0 0
+			}
+
+		}
+
+		geometry	Box {
+			size	24 0.1 0.1
+		}
+
+	}
+}
+DEF In_line Transform {
+	translation	-1.7 -2.7 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0.35 0.35 0.35
+			}
+
+		}
+
+		geometry	Box {
+			size	5 0.6 0.01
+		}
+
+	}
+}
+DEF Stick Transform {
+	translation	5.6301 10 -0.5866
+	rotation	0 0 1  1.5708
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+			}
+
+		}
+
+		geometry	Cylinder {
+			height	23
+			radius	0.2
+		}
+
+	}
+}
+DEF Arm1 Transform {
+	translation	0 10 0
+	rotation	-1 0 0  1.5708
+	children [ 
+	    Shape {
+		    appearance	Appearance {
+			    material	Material {
+				    diffuseColor	0.8 0 0
+				    emissiveColor	0.5 0 0
+			    }
+
+		    }
+
+		    geometry	Cylinder {
+			    height	0.5
+			    radius	1
+		    }
+
+	    }
+
+	    Transform {
+		    translation	0 0 -1.5
+		    rotation	1 0 0  1.5708
+		    children DEF Wrist1 Transform {
+			    translation	0 0 0
+			    children [ 
+				Shape {
+					appearance	Appearance {
+						material	Material {
+						}
+
+					}
+
+					geometry	DEF ArmStick1 Cylinder {
+						height	1.5
+						radius	0.4
+					}
+
+				}
+
+				DEF Fingers1 Transform {
+					translation	0 -0.7 0
+					children [ 
+					    DEF Finger1 Transform {
+						    translation	0 0 0
+						    rotation	0 0 1  0.3
+						    children Shape {
+							    appearance	Appearance {
+								    material	Material {
+									    ambientIntensity	0
+									    diffuseColor	0.8 0.8 0
+									    emissiveColor	0.15 0.15 0
+									    specularColor	0.5 0.5 0.5
+								    }
+
+							    }
+
+							    geometry	Extrusion {
+								    beginCap	TRUE
+								    endCap	TRUE
+								    ccw	TRUE
+								    convex	TRUE
+								    creaseAngle	0
+								    solid	TRUE
+								    crossSection	[ 0.2 0.2,
+										      0.2 -0.2,
+										      -0.2 -0.2,
+										      -0.2 0.2,
+										      0.2 0.2 ]
+								    orientation	[ 0 0 1  0,
+										      0 0 1  0,
+										      0 0 1  0 ]
+								    scale	[ 1 1,
+										      1 1,
+										      0.2 0.4 ]
+								    spine	[ 0 0 0,
+										      0.4 -1 0,
+										      0 -2 0 ]
+							    }
+
+						    }
+					    }
+
+					    DEF Finger2 Transform {
+						    translation	0 0 0
+						    rotation	0 0 -1  0.3
+						    children Shape {
+							    appearance	Appearance {
+								    material	Material {
+									    ambientIntensity	0
+									    diffuseColor	0.8 0.8 0
+									    emissiveColor	0.15 0.15 0
+									    specularColor	0.5 0.5 0.5
+								    }
+
+							    }
+
+							    geometry	Extrusion {
+								    beginCap	TRUE
+								    endCap	TRUE
+								    ccw	TRUE
+								    convex	TRUE
+								    creaseAngle	0
+								    solid	TRUE
+								    crossSection	[ 0.2 0.2,
+										      0.2 -0.2,
+										      -0.2 -0.2,
+										      -0.2 0.2,
+										      0.2 0.2 ]
+								    orientation	[ 0 0 1  0,
+										      0 0 1  0,
+										      0 0 1  0 ]
+								    scale	[ 1 1,
+										      1 1,
+										      0.2 0.4 ]
+								    spine	[ 0 0 0,
+										      -0.4 -1 0,
+										      0 -2 0 ]
+							    }
+
+						    }
+					    }
+					]
+				}
+			    ]
+		    }
+	    }
+	]
+}
+DEF Input Transform {
+	translation	-5 -1.95 0.2
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0.2 0.7 0.7
+			}
+
+			texture	ImageTexture {
+				url	"texture/hoist_demo_in.jpg"
+			}
+
+		}
+
+		geometry	Box {
+			size	2 2 0.1
+		}
+
+	}
+}
+DEF Count_In Transform {
+	translation	-6.58678 -4.2 -0.154631
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 0 0
+			}
+
+		}
+
+		geometry	DEF Counter Text {
+			string	"5"
+			fontStyle	FontStyle {
+				family	"SANS"
+				size	1.5
+			}
+
+		}
+
+	}
+}
+DEF Count_Out Transform {
+	translation	-4.5 -4.2 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 1 0
+			}
+
+		}
+
+		geometry	DEF Counter2 Text {
+			string	"0"
+			fontStyle	FontStyle {
+				family	"SANS"
+				size	1.5
+			}
+
+		}
+
+	}
+}
+DEF Bath1 Transform {
+	translation	4.98954 -2 0.148657
+	children [ 
+	    Shape {
+		    appearance	Appearance {
+			    material	Material {
+				    ambientIntensity	0.2
+				    diffuseColor	0.256821 0.0329933 0.7
+			    }
+
+			    textureTransform	NULL
+			    texture	NULL
+		    }
+
+		    geometry	Box {
+			    size	2 2 0.1
+		    }
+
+	    }
+
+	    Transform {
+		    translation	0 0 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    diffuseColor	0 0.9 0.8
+				    }
+
+				    texture	NULL
+			    }
+
+			    geometry	Box {
+				    size	1.5 1.5 0.1
+			    }
+
+		    }
+	    }
+
+	    Transform {
+		    translation	0 0.9 0.05
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    diffuseColor	0 0 0
+				    }
+
+			    }
+
+			    geometry	Box {
+				    size	1.5 0.3 0.1
+			    }
+
+		    }
+	    }
+	]
+}
+DEF Bath2 Transform {
+	translation	10 -2 0.2
+	children [ 
+	    Shape {
+		    appearance	Appearance {
+			    material	Material {
+				    ambientIntensity	0.2
+				    diffuseColor	0.256821 0.0329933 0.7
+			    }
+
+			    textureTransform	NULL
+			    texture	NULL
+		    }
+
+		    geometry	Box {
+			    size	2 2 0.1
+		    }
+
+	    }
+
+	    Transform {
+		    translation	0 0 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    diffuseColor	1 0.0033375 0
+				    }
+
+				    texture	NULL
+			    }
+
+			    geometry	Box {
+				    size	1.5 1.5 0.1
+			    }
+
+		    }
+	    }
+
+	    Transform {
+		    translation	0 0.9 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    diffuseColor	0 0 0
+				    }
+
+			    }
+
+			    geometry	Box {
+				    size	1.5 0.3 0.1
+			    }
+
+		    }
+	    }
+	]
+}
+DEF Bath3 Transform {
+	translation	15 -2 0.2
+	children [ 
+	    Shape {
+		    appearance	Appearance {
+			    material	Material {
+				    ambientIntensity	0.2
+				    diffuseColor	0.256821 0.0329933 0.7
+			    }
+
+			    textureTransform	NULL
+			    texture	NULL
+		    }
+
+		    geometry	Box {
+			    size	2 2 0.1
+		    }
+
+	    }
+
+	    Transform {
+		    translation	0 0 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    diffuseColor	0 1 0
+				    }
+
+				    texture	NULL
+			    }
+
+			    geometry	Box {
+				    size	1.5 1.5 0.1
+			    }
+
+		    }
+	    }
+
+	    Transform {
+		    translation	0 0.9 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    diffuseColor	0 0 0
+				    }
+
+			    }
+
+			    geometry	Box {
+				    size	1.5 0.3 0.1
+			    }
+
+		    }
+	    }
+	]
+}
+DEF Text_Bath_1 Transform {
+	translation	3.4 -4.2 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 0 0
+			}
+
+		}
+
+		geometry	Text {
+			string	"Bath 1"
+			fontStyle	FontStyle {
+				family	"SANS"
+				size	1.5
+			}
+
+		}
+
+	}
+}
+DEF Text_Bath_2 Transform {
+	translation	8.5 -4.2 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 0 0
+			}
+
+		}
+
+		geometry	Text {
+			string	"Bath 2"
+			fontStyle	FontStyle {
+				family	"SANS"
+				horizontal	TRUE
+				size	1.5
+			}
+
+		}
+
+	}
+}
+DEF Text_Bath_3 Transform {
+	translation	13.5 -4.2 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 0 0
+			}
+
+		}
+
+		geometry	Text {
+			string	"Bath 3"
+			fontStyle	FontStyle {
+				family	"SANS"
+				size	1.5
+			}
+
+		}
+
+	}
+}
+DEF T1 Transform {
+	translation	-5 -2 0
+	children Shape {
+		appearance	Appearance {
+			material	DEF ColorT1 Material {
+				ambientIntensity	0.2
+				diffuseColor	0 0 0
+			}
+
+			texture	NULL
+		}
+
+		geometry	Box {
+			size	1 1 0.1
+		}
+
+	}
+}
+DEF T2 Transform {
+	translation	5 -2 0
+	children Shape {
+		appearance	Appearance {
+			material	DEF ColorT4 Material {
+				ambientIntensity	0.2
+				diffuseColor	0 0.9 0.8
+			}
+
+			texture	NULL
+		}
+
+		geometry	Box {
+			size	1 1 0.1
+		}
+
+	}
+}
+DEF T3 Transform {
+	translation	10 -2 0
+	children Shape {
+		appearance	Appearance {
+			material	DEF ColorT3 Material {
+				diffuseColor	1 0 0
+			}
+
+			texture	NULL
+		}
+
+		geometry	Box {
+			size	1 1 0.1
+		}
+
+	}
+}
+DEF T4 Transform {
+	translation	15 -2 0
+	children Shape {
+		appearance	Appearance {
+			material	DEF ColorT2 Material {
+				diffuseColor	0 1 0
+			}
+
+			texture	NULL
+		}
+
+		geometry	Box {
+			size	1 1 0.1
+		}
+
+	}
+}
+DEF Upper_text Transform {
+	translation	-5.6 12.5 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0 0 0
+			}
+
+		}
+
+		geometry	DEF Text1 Text {
+			string	"Ready to start"
+			fontStyle	FontStyle {
+				family	"SANS"
+				size	2
+			}
+
+			length	0
+		}
+
+	}
+}
+DEF Hoist_chart Transform {
+	translation	27 3.19999 4.54485e-007
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				ambientIntensity	1
+				diffuseColor	1 1 1
+				emissiveColor	1 1 1
+				specularColor	1 1 1
+			}
+
+			texture	ImageTexture {
+				url	"texture/hoist_chart.gif"
+			}
+
+		}
+
+		geometry	Box {
+			size	15 15 0.1
+		}
+
+	}
+}
+DEF Pointer Transform {
+	translation	23.5 3.65 0.5
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	1 0 0
+				emissiveColor	1 0 0
+				transparency	0.3
+			}
+
+		}
+
+		geometry	Cylinder {
+			height	9
+			radius	0.05
+			side	TRUE
+			top	TRUE
+			bottom	TRUE
+		}
+
+	}
+}

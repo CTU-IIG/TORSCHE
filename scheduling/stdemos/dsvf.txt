@@ -1,0 +1,57 @@
+%Code for dsvf_demo
+
+#1
+in 0
+x(8) = 0.0079 * x(7);
+in 3
+x(1) = x(8);
+endparam
+
+#2
+in 0
+x(9)  = L + x(1);
+in 1
+L = x(9);
+endparam
+
+#3
+in 0
+x(10) = 0.5 * x(7);
+in 3
+x(3) = x(10);
+endparam
+
+#4
+in 0
+x(11) = I - L;
+in 1
+x(4) = x(11);
+endparam
+
+#5
+in 0
+x(12) = x(4) - x(3);
+in 1
+x(5) = x(12);
+endparam
+
+#6
+in 0
+x(13) = 0.0079 * x(5);
+in 3
+x(6) = x(13);
+endparam
+
+#7
+in 0
+x(14) = x(6) + x(7);
+in 1
+x(7) = x(14);
+endparam
+
+#8
+in 0
+x(9) = x(5) + L;
+in 1
+x(2) = x(9);
+endparam
