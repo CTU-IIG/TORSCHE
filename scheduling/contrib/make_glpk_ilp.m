@@ -79,7 +79,7 @@ if(skipThisCompilation==0)
 	mexFileName='glpkmex';
 	
     try
-    	compileDir({GLPKSrcDir,GLPKMexSrcDir},{GLPKIncDir,GLPKMexIncDir},mexFileName,[],'-DNULL#0');
+    	compileDir({GLPKSrcDir,GLPKMexSrcDir},{GLPKIncDir,GLPKMexIncDir},mexFileName,[],'-DNULL=0');
     	fprintf('done.\n');
     catch
         skipThisCompilation=1;
