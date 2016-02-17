@@ -90,8 +90,8 @@ if(skipThisCompilation==0)
     %copy compiled files
     if(skipThisCompilation==0)
         copyfile([GLPKpath filesep 'src' filesep 'glpkmex.' mexext], mexFileDestination);
-    	copyfile([GLPKpath filesep 'contrib' filesep 'glpkmex' filesep 'doc' filesep 'glpkmex.m'], mexFileDestination);
-    	copyfile([GLPKpath filesep 'contrib' filesep 'glpkmex' filesep 'doc' filesep 'glpkparams.m'], mexFileDestination);
+    	% copyfile([GLPKpath filesep 'contrib' filesep 'glpkmex' filesep 'doc' filesep 'glpkmex.m'], mexFileDestination);
+    	% copyfile([GLPKpath filesep 'contrib' filesep 'glpkmex' filesep 'doc' filesep 'glpkparams.m'], mexFileDestination);
     end;
         
 end;
