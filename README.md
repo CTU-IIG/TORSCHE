@@ -17,10 +17,10 @@ TORSCHE Scheduling Toolbox for Matlab (0.4.0) currently supports MATLAB from ver
 
 Download the toolbox from github (clone git repository or Downnload ZIP) and copy/unpack Scheduling toolbox into the directory where Matlab toolboxes are installed (most often in <Matlab root>\toolbox on Windows systems and on Linux systems in <Matlab root>/toolbox). Run Matlab and add two new paths into directories with Scheduling toolbox and demos, e.g.:
 
-    addpath(path,'c:\matlab\toolbox\scheduling')
-    addpath(path,'c:\matlab\toolbox\scheduling\stdemos')
+    >> addpath(path,'c:\matlab\toolbox\scheduling')
+    >> addpath(path,'c:\matlab\toolbox\scheduling\stdemos')
 
-Several algorithms in the toolbox are implemented as Matlab MEX-files (compiled C/C++ files). Compiled MEX-files for various MS-Windows, Linux and MacOS systems are part of this distribution. If you use the toolbox on a different platform, please compile these algorithms using command make from \scheduling\contrib directory (in Matlab environment). Before that, please specify the compiler using command mex -setup from (also in Matlab environment). We suggest to use Microsoft Visual C/C++ or gcc compilers.
+Several algorithms in the toolbox are implemented as Matlab MEX-files (compiled C/C++ files). Compiled MEX-files for various MS-Windows, Linux and MacOS systems are part of this distribution. If you use the toolbox on a different platform, please compile these algorithms using command *make* from \scheduling\contrib directory (in Matlab environment). Before that, please specify the compiler using command *mex -setup* from (also in Matlab environment). We suggest to use Microsoft Visual C/C++ or gcc compilers.
 
 ##Help##
 
