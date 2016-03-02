@@ -250,7 +250,7 @@ switch(schoptions.ilpSolver)
         [xmin,fmin,status,glpk_extra]=glpkmex(sense,c,A,b,ctype,lb,ub,vartype,param);        
         extra.time=cputime-CPUTime;
 
-        if(status==5)
+        if(status==5 || status==171)
             status=1;           %Optimal solution was found
         elseif(status==2)
             status=0;           %Time limit exhausted
