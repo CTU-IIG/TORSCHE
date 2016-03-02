@@ -11,7 +11,7 @@ The tool is written in the Matlab object oriented programming language and it is
 
 ##Software Requirements##
 
-TORSCHE Scheduling Toolbox for Matlab (0.4.0) currently supports MATLAB 6.5 (R13) and higher versions. If you want to use the toolbox on different platforms than MS-Windows or Linux on PC (32bit) compatible, some algorithms must be compiled by a C/C++ compiler. We recommend to use Microsoft Visual C/C++ 7.0 and higher under Windows or gcc under Linux.
+TORSCHE Scheduling Toolbox for Matlab (0.4.0) currently supports MATLAB from version 6.5 (R13) to version 2014b. If you want to use the toolbox on different platforms than MS-Windows or Linux on PC compatible, some algorithms must be compiled by a C/C++ compiler. We recommend to use Microsoft Visual C/C++ 7.0 and higher under Windows or gcc under Linux.
 
 ##Installation##
 
@@ -20,7 +20,7 @@ Download the toolbox from github (clone git repository or Downnload ZIP) and cop
     addpath(path,'c:\matlab\toolbox\scheduling')
     addpath(path,'c:\matlab\toolbox\scheduling\stdemos')
 
-Several algorithms in the toolbox are implemented as Matlab MEX-files (compiled C/C++ files). Compiled MEX-files for MS-Windows and Linux on PC (32bit) compatible are part of this distribution. If you use the toolbox on a different platform, please compile these algorithms using command make from \scheduling directory (in Matlab environment). Before that, please specify the compiler using command mex -setup from (also in Matlab environment). We suggest to use Microsoft Visual C/C++ or gcc compilers.
+Several algorithms in the toolbox are implemented as Matlab MEX-files (compiled C/C++ files). Compiled MEX-files for various MS-Windows, Linux and MacOS systems are part of this distribution. If you use the toolbox on a different platform, please compile these algorithms using command make from \scheduling\contrib directory (in Matlab environment). Before that, please specify the compiler using command mex -setup from (also in Matlab environment). We suggest to use Microsoft Visual C/C++ or gcc compilers.
 
 ##Help##
 
