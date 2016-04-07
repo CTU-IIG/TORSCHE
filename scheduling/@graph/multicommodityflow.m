@@ -99,32 +99,26 @@ function [gmcf numberOfFlows] = multicommodityflow(g,s,t,b,pathFilter,varargin)
 
 maxUserParam = max(cellfun(@(x)length(x.UserParam),get(g,'E')));
 biggerParam = maxUserParam;
-if nargin > 5
-    if isnumeric(varargin{1})
-        limitation = varargin{1};
-        limitation = round(limitation(1)); 
-    end
+if nargin > 5 && isnumeric(varargin{1})
+    limitation = varargin{1};
+    limitation = round(limitation(1)); 
 else
       limitation = 3;
 end 
 
-if nargin > 6
-    if isnumeric(varargin{1})
-        cap = varargin{1};
-        cap = round(cap(1)); 
-    end
+if nargin > 6 && isnumeric(varargin{2})
+    cap = varargin{2};
+    cap = round(cap(1)); 
 else
       cap = 1;
 end
 
-if nargin > 7
-    if isnumeric(varargin{2})
-        userParamPos = varargin{2};
-        userParamPos = round(userParamPos(1));
-        if userParamPos == cap
-            disp ('TORSCHE:graph:sameParam',...
-                'Capability and cost are the same parameter!');
-        end
+if nargin > 7 && isnumeric(varargin{3})
+    userParamPos = varargin{3};
+    userParamPos = round(userParamPos(1));
+    if userParamPos == cap
+        disp ('TORSCHE:graph:sameParam',...
+            'Capability and cost are the same parameter!');
     end
 elseif cap ~= 2 && maxUserParam > 1
        userParamPos = 2;
